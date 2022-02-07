@@ -4,12 +4,11 @@
 
 <script>
 import StockList from './components/StockList.vue'
-
 export default {
   name: 'App',
   components: {
-    StockList
-  }
+    StockList,
+    }
 }
 </script>
 
@@ -24,6 +23,7 @@ export default {
 }
 body {
   margin: 100px;
+  background-color: aliceblue;
 }
 td, th {
   text-align: left;
