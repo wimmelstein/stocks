@@ -25,7 +25,7 @@ export default {
 body {
   margin: 100px;
 }
-td {
+td, th {
   text-align: left;
 }
 </style>
