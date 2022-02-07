@@ -1,5 +1,5 @@
 <template>
-  <h1>Stock list</h1>
+  <div class="title">Stock list</div>
   <div class="row">
     <!-- Individual stocks -->
     <div class="col-md-2 mt-2" v-for="stock in stocks" :key="stock.name">
@@ -51,5 +51,9 @@ export default {
 }
 .down {
   color: red;
+}
+
+.title {
+  font-size: 100px;
 }
 </style>
