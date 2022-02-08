@@ -3,30 +3,43 @@
   <div class="row">
     <!-- Individual stocks -->
     <div class="col-md-2 mt-2" v-for="stock in stocks" :key="stock.name">
-      <StockItem :stock=stock />
+      <StockItem @purchase-stock="purchaseStock" :stock="stock" />
     </div>
     <!-- End of individual stocks -->
   </div>
 </template>
 
 <script>
-import StockItem from './StockItem.vue'
+import StockItem from "./StockItem.vue";
 export default {
   name: "StockList",
   data() {
     return {
       stocks: [
-        { name: "BMW", price: 61.05, previousPrice: 0, currency: "€" },
-        { name: "Caterpillar", price: 146.49, previousPrice: 0, currency: "$" },
-        { name: "AMD", price: 76.5, previousPrice: 0, currency: "$" },
-        { name: "Gazprom", price: 4.583, previousPrice: 0, currency: "$" },
+        { id: 1, name: "BMW", price: 61.05, previousPrice: 0, currency: "€" },
+        {
+          id: 2,
+          name: "Caterpillar",
+          price: 146.49,
+          previousPrice: 0,
+          currency: "$",
+        },
+        { id: 3, name: "AMD", price: 76.5, previousPrice: 0, currency: "$" },
+        {
+          id: 4,
+          name: "Gazprom",
+          price: 4.583,
+          previousPrice: 0,
+          currency: "$",
+        },
       ],
       portfolio: [],
     };
   },
   components: {
-    StockItem
-  },  methods: {
+    StockItem,
+  },
+  methods: {
     updatePrices() {
       this.stocks.forEach((stock) => {
         stock.previousPrice = stock.price;
@@ -36,7 +49,10 @@ export default {
         }
       });
     },
-  },  
+    purchaseStock(purchase) {
+      console.log(purchase);
+    },
+  },
   mounted() {
     setInterval(() => {
       this.updatePrices();
