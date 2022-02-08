@@ -49,7 +49,7 @@ export default {
       e.preventDefault();
       const item = {
         stock: this.stock,
-        amount: this.amount.valueOf,
+        amount: this.amount,
       };
 
       this.$emit("purchase-stock", item);
