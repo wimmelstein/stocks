@@ -33,7 +33,10 @@ td,
 th {
   text-align: left;
 }
-ul {
+
+li {
+  list-style-type: none;
   display: inline;
+  padding-inline: 10px;
 }
 </style>
